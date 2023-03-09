@@ -2,8 +2,7 @@
 
 const BIFCoreSDK = require('../index')
 const sdk = new BIFCoreSDK({
-    // host: 'http://test-bif-core.xinghuo.space'
-    host: 'http://172.17.6.84:10087', host1: 'http://test-bif-core.xinghuo.space'
+    host: 'http://172.17.6.84:10087', host2: 'http://test-bif-core.xinghuo.space'
 })
 /**
  * 检测合约账户的有效性
@@ -64,26 +63,8 @@ it('test getContractInfo', async () => {
  */
 it('test contractQuery', async () => {
     let contractQueryOperation = {
-    <
-    <
-    <
-    <
-    <
-    << Updated upstream
-               sourceAddress: '',
-        contractAddress: 'did:bid:efL7d2Ak1gyUpU4eiM3C9oxvbkhXr4Mu', input
-:
-    '', domainId
-:
-    '20' === === = sourceAddress
-:
-    '', contractAddress
-:
-    'did:bid:efL7d2Ak1gyUpU4eiM3C9oxvbkhXr4Mu', input
-:
-    '' >>> >>> > Stashed
-    changes
-}
+        domainId: '20', sourceAddress: '', contractAddress: 'did:bid:efL7d2Ak1gyUpU4eiM3C9oxvbkhXr4Mu', input: ''
+    }
     let data = await sdk.contract.contractQuery(contractQueryOperation)
     console.log('contractQuery() : ', JSON.stringify(data))
 })
