@@ -2,7 +2,7 @@
 
 const BIFCoreSDK = require('../index')
 const sdk = new BIFCoreSDK({
-    host: 'http://test.bifcore.bitfactory.cn'
+    host: 'http://test-bif-core.xinghuo.space'
 })
 const ContractInvokeOperation = require('../lib/operation/contractInvokeOperation')
 /**
@@ -21,14 +21,15 @@ it('test checkContractAddress', async () => {
  * 合约创建
  */
 it('test createContract', async () => {
+    let pay = "\"use strict\";\n" + "function init(input)\n" + "{\n" + "  /*init whatever you want*/\n" + "  return;\n" + "}\n" + "\n" + "function main(input)\n" + "{\n" + "  let para = JSON.parse(input);\n" + "  if (para.do_foo)\n" + "  {\n" + "    let x = {\n" + "      'hello' : 'world'\n" + "    };\n" + "  }\n" + "}\n" + "\n" + "function query(input)\n" + "{ \n" + "  return input;\n" + "}"
     let createContractOperation = {
-        sourceAddress: 'did:bid:efyJLYwWd7SmKV44QXxRAd7NLCfjKxHB',
-        privateKey: 'priSPKpeenYnvVLaGkCg6Lm5c8vsq85htyF62xyFz54eCkJ2rK',
-        payload: '608060405234801561001057600080fd5b5061013f806100206000396000f300608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063031153c214610046575b600080fd5b34801561005257600080fd5b5061005b6100d6565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009b578082015181840152602081019050610080565b50505050905090810190601f1680156100c85780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60606040805190810160405280600b81526020017f68656c6c6f20776f726c640000000000000000000000000000000000000000008152509050905600a165627a7a72305820bc883dfd86fdb2f9784cc8947e4c13628125b0b4dd840f903fb4b40c12ac91010029',
+        sourceAddress: 'did:bid:efHzcjj3w1eg9B4aoaem5axrBLS8y8JF',
+        privateKey: 'priSPKk7LBEPdwYARirLfAheRbYTTmKAJJWUpKQgTRMG7cWMay',
+        payload: pay,
         initBalance: '1',
         remarks: 'create account',
-        type: '1',
-        feeLimit: '100107900',
+        type: 0,
+        feeLimit: '100208801',
         gasPrice: '',
         ceilLedgerSeq: '',
         initInput: '',

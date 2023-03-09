@@ -7,11 +7,8 @@ const sdk = new BIFCoreSDK({
 })
 
 it('test account.getAccount(address)', async () => {
-    let param = {
-        address: 'did:bid:eft6d191modv1cxBC43wjKHk85VVhQDc',
-        domainId: '20'
-    }
-    let data = await sdk.account.getAccount(param)
+    let address = 'did:bid:efHzcjj3w1eg9B4aoaem5axrBLS8y8JF'
+    let data = await sdk.account.getAccount(address)
     console.log('getAccount() : ', JSON.stringify(data))
 })
 
